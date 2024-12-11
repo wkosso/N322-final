@@ -2,8 +2,10 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 import React from 'react';
 import { Colors } from '@/constants/Colors';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 export default function LoginScreen() {
+    const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
@@ -18,9 +20,12 @@ export default function LoginScreen() {
         <Text style={styles.tagLine}>
           We are located in the heart of the big city. This is where it all happens!
         </Text>
-        <TouchableOpacity style={styles.btn}>
-          <Text style={styles.whiteText}>Sign Up Today</Text>
-        </TouchableOpacity>
+        <TouchableOpacity
+      style={styles.btn}
+      onPress={() => navigation.navigate('SignUp')} // Correct way to navigate to the SignUp screen
+    >
+      <Text style={styles.whiteText}>Sign Up Today</Text>
+    </TouchableOpacity>
       </View>
     </View>
   );

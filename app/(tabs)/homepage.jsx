@@ -1,11 +1,16 @@
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { Link } from 'expo-router';
 
 export default function Homepage() {
   return (
     <ScrollView style={styles.scrollView}>
+     
       <View style={styles.container}>
+      
         {/* Welcome Section */}
         <Text style={styles.heading}>Welcome to SneakerHub!</Text>
+        <Link href="/sign-up/[[...sign-up]]/page">SIGN UP</Link>
+        <Link href="/sign-in/[[...sign-in]]/page">SIGN IN</Link>
         <Text style={styles.introText}>Browse Our Collection</Text>
         <Text style={styles.sectionText}>
           Explore the latest styles, from classic sneakers to cutting-edge designs. Whether you're looking for comfort, style, or performance, we have something for every sneakerhead.
